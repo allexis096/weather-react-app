@@ -1,9 +1,14 @@
 import React, { useState, useCallback, FormEvent } from 'react';
-import { Container, Card, Content } from './styles';
 import { api } from '../../services/api';
 
+import { Container, Form, Content, Card, Temperature } from './styles';
+
 interface InputProps {
+  city: string;
+  date: string;
+  description: string;
   temp: number;
+  time: string;
 }
 
 const Dashboard: React.FC = () => {
@@ -29,20 +34,36 @@ const Dashboard: React.FC = () => {
 
   return (
     <Container>
-      <Card>
-        <form onSubmit={handleSubmit}>
-          <input
-            value={newCity}
-            onChange={e => setNewCity(e.target.value)}
-            type="text"
-            placeholder="Get the temperature of your city"
-          />
-          <button type="submit">Find</button>
-        </form>
-      </Card>
+      <Form onSubmit={handleSubmit}>
+        <input
+          value={newCity}
+          onChange={e => setNewCity(e.target.value)}
+          type="text"
+          placeholder="Get the temperature of your city"
+        />
+        <button type="submit">Get</button>
+      </Form>
+
       <Content>
+        {/* <Card>
+          <h2>Saquarema</h2>
+          <p>Segunda, 13h, Sol</p>
+          <Temperature>
+            <h1>23°C</h1>
+            <p>foto de sol</p>
+          </Temperature>
+        </Card> */}
         {cities.map(city => (
-          <h1 key={city.temp}>{city.temp}</h1>
+          <Card key={city.temp}>
+            <h2>{city.city}</h2>
+            <p>
+              {city.description}, {city.date}
+            </p>
+            <Temperature>
+              <h1>{city.temp}°C</h1>
+              <p>{city.time}h</p>
+            </Temperature>
+          </Card>
         ))}
       </Content>
     </Container>
