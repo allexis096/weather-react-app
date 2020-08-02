@@ -1,44 +1,94 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center"><img alt="weather-app" src="https://imgur.com/MzTte0w.png" width="300" height="300" /></p>
 
-## Available Scripts
+<p align="center">
 
-In the project directory, you can run:
+<img alt="GitHub language count" src="https://img.shields.io/badge/languages-3-blue">
 
-### `yarn start`
+<img alt="Repository size" src="https://img.shields.io/badge/repo%20size-766%20kB-blue">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<a href="https://github.com/allexis096/weather-react-app/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/badge/last%20commit-august%202020-blue">
+</a>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?color=blue">
+</p>
 
-### `yarn test`
+<p align="center">
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<a href="https://reactjs.org/">
+  <img alt="ReactJS" src="https://img.shields.io/static/v1?color=blue&label=React&message=JS&?style=plastic&logo=React">
+</a>
 
-### `yarn build`
+</p>
+<h2 align="center">
+  Weather Get - React App
+</h2>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">The weather get temperature in Typescript!</p>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## 🚀 About this app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In this app, I build a input where you will put the city and when connected with the API, get the response in the card.
 
-### `yarn eject`
+## 🔨 Techs:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [ReactJs][reactjs]
+- [TypeScript][typescript]
+- [Polished](https://github.com/styled-components/polished)
+- [Styled Components](https://styled-components.com/)
+- [Axios][axios]
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 How to run
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+For clone and run this app, you need to have [Git](https://git-scm.com) and [NodeJs][nodejs] installed in your PC.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 🌀 Cloning the repository
 
-## Learn More
+```bash
+# To clone
+$ git clone https://github.com/allexis096/weather-react-app.git
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Access the project folder in your terminal
+$ cd weather-react-app
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 🧭 Running the app
+
+```bash
+# Install the dependencies
+$ yarn
+
+# Running the application
+$ yarn start
+
+# The serve init in the port:3000 - access http://localhost:3000
+```
+
+## 🛠 If you get error in API
+
+- **`ENTER IN THE SITE`**: <a>https://hgbrasil.com/</a>, click in `Register/Login`, create your Account or make login, click in the button `Keys` and create your key.
+
+- **`Next step`**: With your key:
+```bash
+# Access the project folder in your terminal
+$ cd weather-react-app
+```
+- **`Go to`**: `src/pages/Dashboard`, and edit the `index.tsx` and switch the key with your key as in the image bellow:
+
+<img alt="key response" src="https://imgur.com/fA74rUB.png">
+
+## 🛠 Functionalities of the application
+
+- **`How to use`**: Choice your city on the `input` and click in `Get`. When you click, You'll see the card with response!
+
+## 📝 License
+
+This project is under the MIT License. See the [LICENSE][license] for know more.
+
+Made with ❤️ by Allexis Figueiredo 👋🏽 [Contact me!](https://www.linkedin.com/in/allexis-figueiredo/)
+
+[license]: https://opensource.org/licenses/MIT
+[reactjs]: https://reactjs.org/
+[axios]: https://www.npmjs.com/package/axios
+[typescript]: https://www.typescriptlang.org/
+[nodejs]: https://nodejs.org/en/
