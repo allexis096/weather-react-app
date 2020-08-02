@@ -1,10 +1,26 @@
 import styled, { keyframes } from 'styled-components';
 import { darken } from 'polished';
 
-import logoImg from '../../assets/sun.jpg';
+import logoImg from '../../assets/sunny.jpg';
 
 export const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 600px;
   height: 100vh;
+`;
+
+const fromLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-320px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 `;
 
 export const Form = styled.form`
@@ -13,6 +29,8 @@ export const Form = styled.form`
   align-items: center;
 
   padding-top: 30px;
+
+  animation: ${fromLeft} 2s;
 
   input {
     width: 250px;
@@ -55,7 +73,7 @@ export const Content = styled.div`
 const fromRight = keyframes`
   from {
     opacity: 0;
-    transform: translateX(460px);
+    transform: translateX(320px);
   }
   to {
     opacity: 1;
@@ -65,11 +83,11 @@ const fromRight = keyframes`
 
 export const Card = styled.div`
   background: url(${logoImg});
-  background-size: 300px 300px;
+  background-size: 300px 500px;
   width: 300px;
-  height: 300px;
+  height: 500px;
   border-radius: 4px;
-  box-shadow: 2px 15px 28px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
 
   animation: ${fromRight} 2s;
@@ -102,6 +120,7 @@ export const Temperature = styled.div`
   > p {
     margin-top: 15px;
     font-size: 26px;
-    color: #000;
+    -webkit-text-stroke: 0.3px #000;
+    color: #fff;
   }
 `;
