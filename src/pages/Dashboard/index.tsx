@@ -15,11 +15,6 @@ const Dashboard: React.FC = () => {
   const [newCity, setNewCity] = useState('');
   const [cities, setCities] = useState<InputProps[]>([]);
 
-  // useEffect(() => {
-  //   localStorage.removeItem('@weather:cities');
-  //   setCities([]);
-  // }, []);
-
   const handleSubmit = useCallback(
     async (event: FormEvent<HTMLFormElement>): Promise<void> => {
       event.preventDefault();
