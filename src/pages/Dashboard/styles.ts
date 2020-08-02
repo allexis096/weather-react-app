@@ -120,7 +120,6 @@ export const Temperature = styled.div`
   > p {
     margin-top: 15px;
     font-size: 26px;
-    -webkit-text-stroke: 0.3px #000;
-    color: #fff;
+    color: #000;
   }
 `;

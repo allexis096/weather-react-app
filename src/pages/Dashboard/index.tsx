@@ -15,6 +15,11 @@ const Dashboard: React.FC = () => {
   const [newCity, setNewCity] = useState('');
   const [cities, setCities] = useState<InputProps[]>([]);
 
+  // useEffect(() => {
+  //   localStorage.removeItem('@weather:cities');
+  //   setCities([]);
+  // }, []);
+
   const handleSubmit = useCallback(
     async (event: FormEvent<HTMLFormElement>): Promise<void> => {
       event.preventDefault();
@@ -27,11 +32,9 @@ const Dashboard: React.FC = () => {
 
       const { results } = response.data;
 
-      setCities([...cities, results]);
-
-      console.log(results);
+      setCities([results]);
     },
-    [newCity, cities],
+    [newCity],
   );
 
   return (
@@ -47,14 +50,6 @@ const Dashboard: React.FC = () => {
       </Form>
 
       <Content>
-        {/* <Card>
-          <h2>Saquarema, RJ</h2>
-          <p>Ensolarado, 02/08/2020</p>
-          <Temperature>
-            <h1>23°C</h1>
-            <p>15:09h</p>
-          </Temperature>
-        </Card> */}
         {cities.map(city => (
           <Card key={city.temp}>
             <h2>{city.city}</h2>
@@ -63,7 +58,7 @@ const Dashboard: React.FC = () => {
             </p>
             <Temperature>
               <h1>{city.temp}°C</h1>
-              <p>{city.time}h</p>
+              <p>Último horário analizado às {city.time}h</p>
             </Temperature>
           </Card>
         ))}
