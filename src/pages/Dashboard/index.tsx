@@ -15,26 +15,28 @@ const Dashboard: React.FC = () => {
   const [newCity, setNewCity] = useState('');
   const [cities, setCities] = useState<InputProps[]>([]);
 
-  // const handleSubmit = useCallback(
-  //   async (event: FormEvent<HTMLFormElement>): Promise<void> => {
-  //     event.preventDefault();
+  const handleSubmit = useCallback(
+    async (event: FormEvent<HTMLFormElement>): Promise<void> => {
+      event.preventDefault();
 
-  //     const response = await api.get(
-  //       `weather?format=json-cors&key=44b85c95&city_name=${newCity}`,
-  //     );
+      setNewCity('');
 
-  //     const { results } = response.data;
+      const response = await api.get(
+        `weather?format=json-cors&key=44b85c95&city_name=${newCity}`,
+      );
 
-  //     setCities([...cities, results]);
+      const { results } = response.data;
 
-  //     console.log(results);
-  //   },
-  //   [newCity, cities],
-  // );
+      setCities([...cities, results]);
+
+      console.log(results);
+    },
+    [newCity, cities],
+  );
 
   return (
     <Container>
-      <Form onSubmit={() => {}}>
+      <Form onSubmit={handleSubmit}>
         <input
           value={newCity}
           onChange={e => setNewCity(e.target.value)}
@@ -45,15 +47,15 @@ const Dashboard: React.FC = () => {
       </Form>
 
       <Content>
-        <Card>
+        {/* <Card>
           <h2>Saquarema, RJ</h2>
           <p>Ensolarado, 02/08/2020</p>
           <Temperature>
             <h1>23°C</h1>
             <p>15:09h</p>
           </Temperature>
-        </Card>
-        {/* {cities.map(city => (
+        </Card> */}
+        {cities.map(city => (
           <Card key={city.temp}>
             <h2>{city.city}</h2>
             <p>
@@ -64,7 +66,7 @@ const Dashboard: React.FC = () => {
               <p>{city.time}h</p>
             </Temperature>
           </Card>
-        ))} */}
+        ))}
       </Content>
     </Container>
   );
